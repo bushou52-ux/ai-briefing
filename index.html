@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI情勢ブリーフィング</title>
+<meta name="description" content="無料の公開情報源から毎朝7:00に自動収集・分析したAI業界ニュースの日次ブリーフィング">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7FBFF">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0B1826">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="AI情勢">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<style>
+:root{
+  --bg:#F7FBFF; --surface:#DFF3FA; --surface-2:#EEF8FD;
+  --ink:#0B1826; --ink-soft:#3F5568; --ink-faint:#4F667A;
+  --accent:#4C97C6; --accent-2:#A9DDF5; --link:#25689A;
+  --accent-rgb:76,151,198;
+  --tier-s:#B23A2E; --tier-s-bg:#FCEAE7; --tier-a:#9A5A00; --tier-a-bg:#FFF1DC;
+  --tier-b:#476174; --tier-b-bg:#E6EEF3;
+  --glow:0 4px 10px rgba(var(--accent-rgb),0.12); --line:rgba(var(--accent-rgb),0.18);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0B1826; --surface:#123049; --surface-2:#0F263B;
+    --ink:#EAF4FB; --ink-soft:#B7CBDC; --ink-faint:#8EA6B9;
+    --accent:#7FCBF0; --accent-2:#A9DDF5; --link:#8FD3F4;
+    --accent-rgb:127,203,240;
+    --tier-s:#FF9A8C; --tier-s-bg:#3B1E1B; --tier-a:#F3BE6A; --tier-a-bg:#3A2B12;
+    --tier-b:#A9BFD0; --tier-b-bg:#1B3448;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:880px;margin:0 auto;padding:max(28px,env(safe-area-inset-top)) 20px 72px}
+.eyebrow{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--link);font-weight:600;display:flex;align-items:center;gap:8px}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(var(--accent-rgb),.18)}
+h1{font-size:clamp(28px,5.5vw,38px);font-weight:700;letter-spacing:-.01em;margin:8px 0 6px;text-wrap:balance}
+.sub{color:var(--ink-soft);font-size:15px;max-width:62ch;margin:0}
+.metaline{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--ink-faint)}
+.metaline b{color:var(--ink-soft);font-weight:600}
+.glow{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--glow)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 30px}
+.kpi{padding:14px 16px}
+.kpi .n{font-size:26px;font-weight:700;line-height:1.1}
+.kpi .n small{font-size:13px;font-weight:600;color:var(--ink-faint)}
+.kpi .l{margin-top:4px;font-size:11.5px;color:var(--ink-faint)}
+section{margin-bottom:36px}
+h2{font-size:20px;font-weight:700;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+h2 .count{font-size:12px;font-weight:600;color:var(--ink-faint)}
+.note-sub{font-size:13px;color:var(--ink-faint);margin:0 0 14px}
+.theses{list-style:none;margin:0;padding:6px 18px}
+.theses li{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+.theses li:last-child{border-bottom:none}
+.theses li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;margin-top:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+.pill{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.03em;padding:3px 9px;border-radius:999px}
+.tier-s{background:var(--tier-s-bg);color:var(--tier-s)}
+.tier-a{background:var(--tier-a-bg);color:var(--tier-a)}
+.tier-b{background:var(--tier-b-bg);color:var(--tier-b)}
+.pill.cat{background:var(--surface-2);color:var(--ink-soft);border:1px solid var(--line);font-weight:600}
+.s-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.s-card{padding:16px 18px;display:flex;flex-direction:column;gap:9px;border-left:3px solid var(--tier-s)}
+.s-card .row{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.s-card h3{font-size:16px;line-height:1.4;margin:0}
+.s-card p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+.s-card .why b{color:var(--ink);font-weight:600;margin-right:4px}
+.s-card .meta{font-size:11.5px;color:var(--ink-faint)}
+.s-card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px dashed var(--line)}
+.stars{color:var(--tier-a);letter-spacing:1px;font-size:13px}
+.link{font-size:13px;font-weight:600;white-space:nowrap}
+.quiet{padding:18px 20px}
+.quiet p{margin:10px 0 12px;font-size:14px;color:var(--ink-soft)}
+.refs{list-style:none;margin:0;padding:0}
+.refs li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.refs li:first-child{border-top:none}
+.refs .num{color:var(--ink-faint);font-size:11.5px;white-space:nowrap}
+.a-list{overflow:hidden}
+.a-row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;padding:13px 18px;border-bottom:1px solid var(--line)}
+.a-row:last-child{border-bottom:none}
+.a-title{font-size:14.5px;font-weight:600;line-height:1.4}
+.a-sum{font-size:13px;color:var(--ink-soft);margin-top:3px}
+.a-src{font-size:11.5px;color:var(--ink-faint);margin-top:4px}
+.trend{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.trend .glow{padding:12px 8px;text-align:center}
+.trend .n{font-size:20px;font-weight:700}
+.trend .l{font-size:11px;color:var(--ink-faint);margin-top:2px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.col{display:flex;flex-direction:column;gap:12px}
+.note{padding:16px 18px}
+.note .tag{display:block;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--link);font-weight:700;margin-bottom:6px}
+.note h4{margin:0 0 6px;font-size:14.5px;line-height:1.4}
+.note p{margin:0 0 6px;font-size:13px;color:var(--ink-soft)}
+.note dl{margin:0 0 8px;font-size:12.5px;color:var(--ink-soft)}
+.note dt{display:inline;font-weight:600;color:var(--ink-faint)}
+.note dd{display:inline;margin:0}
+.note dd::after{content:"";display:block;margin-bottom:3px}
+.action{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0B1826;border-radius:14px;padding:20px 22px;display:flex;gap:16px;align-items:center;box-shadow:0 8px 20px rgba(var(--accent-rgb),.35)}
+.action .icon{font-size:26px;line-height:1;flex:none}
+.action strong{display:block;font-size:16px;font-weight:700}
+.action p{margin:2px 0 0;font-size:14.5px}
+.empty{padding:16px 18px;color:var(--ink-soft);font-size:14px}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-faint);display:flex;flex-direction:column;gap:8px}
+footer .glow{padding:12px 16px;color:var(--ink-soft);font-size:13px}
+footer .glow b{color:var(--ink)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+@media (max-width:640px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .s-grid,.two{grid-template-columns:1fr}
+  .trend{grid-template-columns:repeat(3,1fr)}
+  .a-row{grid-template-columns:auto 1fr}
+  .a-row .link{grid-column:2;justify-self:start}
+}
+@media (prefers-reduced-motion:no-preference){ a{transition:opacity .15s} a:hover{opacity:.85} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><span class="dot"></span>AI Intelligence Briefing</div>
+    <h1>AI情勢ブリーフィング</h1>
+    <p class="sub">OpenAI・Google DeepMind・NVIDIA・Hugging Face・arXiv・GitHub Releases・Hacker News・Google Newsなど、無料の公開情報源55件を毎朝7:00に自動収集し、重複を除いてS〜Cの重要度で選別した日次ブリーフィングです。</p>
+    <div class="metaline num">
+      <span><b>更新</b> 2026-09-16 19:57 JST</span>
+      <span><b>対象</b> 直近24〜30時間の新着・更新</span>
+      <span><b>次回</b> 明朝7:00 自動更新</span>
+    </div>
+  </header>
+
+  <div class="kpis">
+    <div class="glow kpi"><div class="n num">441</div><div class="l">本日の候補記事（重複統合後）</div></div>
+    <div class="glow kpi"><div class="n num" style="color:var(--tier-s)">1</div><div class="l">S級 — 前提が変わる規模</div></div>
+    <div class="glow kpi"><div class="n num" style="color:var(--tier-a)">18</div><div class="l">A級 — 今週中に押さえる（他 11件のS/A級候補は割愛）</div></div>
+    <div class="glow kpi"><div class="n num">54<small>/55</small></div><div class="l">情報源 稼働（直近実行）</div></div>
+  </div>
+
+  <section>
+    <h2>今日の結論</h2>
+    <p class="note-sub">「何が起きたか」ではなく「AI業界がどちらへ進んだか」の要点</p>
+    <ul class="glow theses"><li>NVIDIAと協力して物理的なAIが自動運転車に搭載される技術が発展している。</li><li>CADDiの製造AIスタートアップが1.2兆ドルの市場シェアを獲得し、1.7兆ドルの市場価値を達成。</li><li>OpenAIのGPT-6 Astraが最も強力なモデルとなり、ユーザーのコンピュータを効率的に利用できるようになる。</li><li>AIのコード生成プラットフォームが急速に拡大し、2兆ドルの市場規模を形成する。</li><li>Shield AIが約20兆ドルの市場価値を達成する可能性がある。</li></ul>
+  </section>
+
+  <section>
+    <h2>S級ニュース <span class="count">前提が変わる規模の変化・1件</span></h2>
+    <div class="s-grid">
+      <article class="glow s-card">
+        <div class="row">
+          <span class="pill tier-s">S · HIGH</span>
+          <span class="pill cat">モデル</span>
+        </div>
+        <h3>Physical AI Takes the Wheel: How the World’s Robotaxi Leaders Are Building With NVIDIA Technologies</h3>
+        <p class="summary">物理AIが初の商業化突破として世界的なロボタクシー市場は2035年までに4000億ドルに達し、ドライバー解放のための自動車はすでに世界の busiestと最複雑な道路で人を移動させています。ドライバー解放のための自動車のデモンストレーションは1つですが、 fleetの拡大は...</p>
+        <p class="why"><b>なぜ重要か</b> AI業界の前提を変えうる規模の変化であり、多くの関連サービス・業務プロセスに波及する可能性があります。</p>
+        <p class="why"><b>新しくできること</b> できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
+        <div class="meta num">NVIDIA Blog ｜ 2026-09-10</div>
+        <div class="foot">
+          <span class="stars">★★★★★</span>
+          <a class="link" href="https://blogs.nvidia.com/blog/robotaxi-leaders-full-stack-open-platform/" target="_blank" rel="noopener">一次情報 →</a>
+        </div>
+      </article></div>
+  </section>
+
+  <section>
+    <h2>A級ニュース <span class="count">今週中に押さえる・7件</span></h2>
+    <div class="glow a-list">
+      <div class="a-row">
+        <span class="pill tier-a">A</span>
+        <div class="a-body">
+          <div class="a-title">Exclusive: Manufacturing AI startup CADDi valued at $1.2 billion following $114 million Series D funding round - fortune.com</div>
+          <div class="a-sum">製造業AIスタートアップCADDiが114億ドルのシリーズD資金調達を受け、120億ドルのvaluationに達した。</div>
+          <div class="a-src num">ビジネス ｜ Google News (fortune.com) ｜ 2026-09-15</div>
+        </div>
+        <a class="link" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxOd3FpVERha3hBZnV4MDNqYU5iOVhUUnFwemhmU1h3YUV2dnZFcWF3TEdEd2pHblJiVW1KTUJmMVJXazRoZzFmdmxCSGRlXzVwdG5rdTM3MGM4aEtsRXlCbHdhMVk2OHZsZXFSdHpxNkU0Y3Y4bXVVR2U2dENnZ0xPSVZuSTlwclg5OEsxZ3lqYnNmSGlmeHhtdF9sZk1IVFVsMVFfQg?oc=5" target="_blank" rel="noopener">読む →</a>
+      </div>
+      <div class="a-row">
+        <span class="pill tier-a">A</span>
+        <div class="a-body">
+          <div class="a-title">OpenAI launches GPT-6 Astra, its most powerful model yet, and touts its ability to use your computer - fortune.com</div>
+          <div class="a-sum">OpenAIがGPT-6 Astraを発表し、最も強力なモデルとして紹介。このモデルはあなたのコンピュータを使用する能力を強調しています。</div>
+          <div class="a-src num">モデル ｜ Google News (fortune.com) ｜ 2026-09-03</div>
+        </div>
+        <a class="link" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPZ3FxYmJjOHVlZkFCOEtrdXQxVmFPZWh0UlJFb1Vrdm5WOXU2ajg5S181c252R0wyN0s1NWhEWjNnN05QSXdPa1NYTzRjem5nUXJuMG9ENll5S2hlYjBpV0I1ZU1jTVBQY2ZUN0ZIaEM5VV9zWmR4TGZ6OUlVT1J4ZmFFdlE0V1dWWDd0ZXFzWUEzVDhlZHVJSlo2WEtzLXJPVHJtMA?oc=5" target="_blank" rel="noopener">読む →</a>
+      </div>
+      <div class="a-row">
+        <span class="pill tier-a">A</span>
+        <div class="a-body">
+          <div class="a-title">OpenAI breakthrough triggers &#x27;existential crisis&#x27; in math</div>
+          <div class="a-sum">OpenAIの革新的発見が数学の「存在性危機」を引き起こす。</div>
+          <div class="a-src num">モデル ｜ Hacker News ｜ 2026-09-16</div>
+        </div>
+        <a class="link" href="https://www.science.org/content/article/openai-breakthrough-triggers-existential-crisis-math" target="_blank" rel="noopener">読む →</a>
+      </div>
+      <div class="a-row">
+        <span class="pill tier-a">A</span>
+        <div class="a-body">
+          <div class="a-title">Towards Detecting AI-Assisted Responses in Online Surveys</div>
+          <div class="a-sum">タイトル: AIがオンライン調査で使用される可能性を検出するための初期 Benchmarked データセットの作成
+
+要約: 人工知能（AI）がオンライン調査で使用される可能性を検出するための初期 Benchmarked データセット（ASURRE）が作成されました。このデータセットは、AIが調査に参加する際に使用する様々な戦略（全生成と修正、キャラクターグ round によるアグエシックな生成）を捕捉するための初期 Benchmarked データセットです。実際の調査に組み込まれた真実の回答とマシン生成テキスト（MGT）を組み合わせて、既存の機械生成テキスト（MGT）検出器の評価を行いました。</div>
+          <div class="a-src num">研究 ｜ arXiv · cs.CL ｜ 2026-09-15</div>
+        </div>
+        <a class="link" href="https://arxiv.org/abs/2609.17317v1" target="_blank" rel="noopener">読む →</a>
+      </div>
+      <div class="a-row">
+        <span class="pill tier-a">A</span>
+        <div class="a-body">
+          <div class="a-title">Multi-Agent AI Platforms Market to Reach $129.38 Billion by 2035 as Enterprise AI Automation Accelerates | SNS Insider - GlobeNewswire</div>
+          <div class="a-sum">2035年までに、多Agent型AIプラットフォーム市場は129.38億ドルに達し、企業のAI自動化が加速する中で成長する見込みです。</div>
+          <div class="a-src num">エージェント ｜ Google News (GlobeNewswire) ｜ 2026-09-14</div>
+        </div>
+        <a class="link" href="https://news.google.com/rss/articles/CBMilgJBVV95cUxNUGhYamJGUFM3OFdLdHdzWmhVbjRsNThOX21kajNJWnlPT3Zob3FjdERFT3hfRURpR3JFYzlsOGtLdU5kbnYtajVDR20tTTE0Mk5kc1pYeFNVVHlYSkVJdklPVWtlbFhtQmJ0QlJ1RFJfYU10cjB0WGwwaDJnZGFXWEV0bHJ0TDlZTU10NnJJZ0tIRHJOd013eE43eE5TQ09lYmNKalVfRXhyaDJZLUQzeHdvN0o5TzBCQXlOcHRycU5PNjBxU21KaFRocDN6a0V0OUxwZnI2MDRPT3dmb1pfQ1huSWRZckFBQ3FDa1F0UUVkRW13X3A1NEJELWloc2JHV3MzTTd4RXZXbHVaR3VHVmo0RWNWUQ?oc=5" target="_blank" rel="noopener">読む →</a>
+      </div>
+      <div class="a-row">
+        <span class="pill tier-a">A</span>
+        <div class="a-body">
+          <div class="a-title">Italian Cybersecurity Startup Exein Raises $270 Million, Reaches $1.7 Billion Valuation: 10 outlets compared - NewsCord</div>
+          <div class="a-sum">イタリアのサイバーセキュリティスタートアップExeinが270億ドルを調達し、1700億ドルのvaluationを達成したと報じられています。</div>
+          <div class="a-src num">ビジネス ｜ Google News (NewsCord) ｜ 2026-09-15</div>
+        </div>
+        <a class="link" href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxQeVFfMy1fWnVReEx2WGdQUFpvTUlVaHJxR090cmNqMVZ0SEkyZ3E1dW00ZG5NeFlmem9kWjJBM2pvMVVBX21pbHdDdjRIbnpFU2ZHSm84X0xNYzNlYkNVZ3pHRkpJWjN6QVJFUXB5SUZUaVpidXhDUzJ3UWY3MFNJMFAtckotS3Z1QmFTazN5OTE5cUpuRUlReHJsSVdqTkR0UUZnLXhtTm1Eb2ZIYUxkQjg0TmJqUkNCeDNMNGV1UHNRVFFoLUJoUGVGb1ZPMEJybncxN25qYWdBWHduVS1KUF9wbWJnOWhLYXc?oc=5" target="_blank" rel="noopener">読む →</a>
+      </div>
+      <div class="a-row">
+        <span class="pill tier-a">A</span>
+        <div class="a-body">
+          <div class="a-title">Exclusive | AI Coding Startup Factory More Than Triples Valuation to $5 Billion - WSJ</div>
+          <div class="a-sum">AI開発プラットフォームのスタートアップファクトリーのvaluationは50億ドルに上昇し、約3倍に成長しました。</div>
+          <div class="a-src num">コーディング ｜ Google News (WSJ) ｜ 2026-09-15</div>
+        </div>
+        <a class="link" href="https://news.google.com/rss/articles/CBMipgFBVV95cUxOWmI1bldFbkpJWG96M0tuWlVJSWtJU1lKeXhwcENBVHptZExpZ2dnNkhySzZwUWdYdlJNZ082SlNORWtpR2dxT09SS0FncjRYTmNzV29QMVMyenJ4bmNSeUtZZnRlSDZVWU5ZaWNBTnVkZFQ0OG9ic2lxVTdaUVhqdUtjQVEtYTdTOWZ3UW9BSGV6VTJxWFhEXzVLUk90Q2pzYTdibU1R?oc=5" target="_blank" rel="noopener">読む →</a>
+      </div></div>
+  </section>
+
+  <section>
+    <h2>今週のカテゴリ動向 <span class="count">直近7日間・記事数</span></h2>
+    <div class="trend"><div class="glow"><div class="n num">451</div><div class="l">モデル</div></div><div class="glow"><div class="n num">86</div><div class="l">研究</div></div><div class="glow"><div class="n num">82</div><div class="l">エージェント</div></div><div class="glow"><div class="n num">54</div><div class="l">コーディング</div></div><div class="glow"><div class="n num">27</div><div class="l">ビジネス</div></div><div class="glow"><div class="n num">20</div><div class="l">企業導入</div></div></div>
+  </section>
+
+  <section>
+    <h2>今日の実践メモ</h2>
+    <div class="two">
+      <div class="col">
+        <div class="glow note">
+          <span class="tag">試すべきAI</span>
+          <h4>Physical AI Takes the Wheel: How the World’s Robotaxi Leaders Are Building With NVIDIA Technologies</h4>
+          <p>できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
+          <dl><dt>所要時間</dt><dd>目安15〜30分</dd><dt>試し方</dt><dd>公式サイト/リポジトリを開き、無料枠・OSS版があれば実際に動かす</dd></dl>
+          <a class="link" href="https://blogs.nvidia.com/blog/robotaxi-leaders-full-stack-open-platform/" target="_blank" rel="noopener">一次情報を開く →</a>
+        </div>
+        <div class="glow note">
+          <span class="tag">試すべきAI</span>
+          <h4>OpenAI launches GPT-6 Astra, its most powerful model yet, and touts its ability to use your computer - fortune.com</h4>
+          <p>できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
+          <dl><dt>所要時間</dt><dd>目安15〜30分</dd><dt>試し方</dt><dd>公式サイト/リポジトリを開き、無料枠・OSS版があれば実際に動かす</dd></dl>
+          <a class="link" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPZ3FxYmJjOHVlZkFCOEtrdXQxVmFPZWh0UlJFb1Vrdm5WOXU2ajg5S181c252R0wyN0s1NWhEWjNnN05QSXdPa1NYTzRjem5nUXJuMG9ENll5S2hlYjBpV0I1ZU1jTVBQY2ZUN0ZIaEM5VV9zWmR4TGZ6OUlVT1J4ZmFFdlE0V1dWWDd0ZXFzWUEzVDhlZHVJSlo2WEtzLXJPVHJtMA?oc=5" target="_blank" rel="noopener">一次情報を開く →</a>
+        </div>
+        <div class="glow note">
+          <span class="tag">試すべきAI</span>
+          <h4>OpenAI breakthrough triggers &#x27;existential crisis&#x27; in math</h4>
+          <p>できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
+          <dl><dt>所要時間</dt><dd>目安15〜30分</dd><dt>試し方</dt><dd>公式サイト/リポジトリを開き、無料枠・OSS版があれば実際に動かす</dd></dl>
+          <a class="link" href="https://www.science.org/content/article/openai-breakthrough-triggers-existential-crisis-math" target="_blank" rel="noopener">一次情報を開く →</a>
+        </div></div>
+      <div class="col">
+        <div class="glow note">
+          <span class="tag">ビジネスチャンス</span>
+          <h4>Exclusive: Manufacturing AI startup CADDi valued at $1.2 billion follo… を参考にした小規模展開</h4>
+          <dl>
+            <dt>顧客</dt><dd>同様の課題を持つ中小企業・個人事業主</dd>
+            <dt>課題</dt><dd>特定業界の営業・カスタマーサクセス・オペレーション職に影響する可能性があります。</dd>
+            <dt>難易度</dt><dd>中（既存AI API/OSSの組み合わせで実装可）</dd>
+            <dt>最初の一手</dt><dd>既存顧客への個別提案、または該当業界コミュニティでの告知</dd>
+          </dl>
+          <a class="link" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxOd3FpVERha3hBZnV4MDNqYU5iOVhUUnFwemhmU1h3YUV2dnZFcWF3TEdEd2pHblJiVW1KTUJmMVJXazRoZzFmdmxCSGRlXzVwdG5rdTM3MGM4aEtsRXlCbHdhMVk2OHZsZXFSdHpxNkU0Y3Y4bXVVR2U2dENnZ0xPSVZuSTlwclg5OEsxZ3lqYnNmSGlmeHhtdF9sZk1IVFVsMVFfQg?oc=5" target="_blank" rel="noopener">参照 →</a>
+        </div>
+        <div class="glow note">
+          <span class="tag">ビジネスチャンス</span>
+          <h4>Multi-Agent AI Platforms Market to Reach $129.38 Billion by 2035 as En… を参考にした小規模展開</h4>
+          <dl>
+            <dt>顧客</dt><dd>同様の課題を持つ中小企業・個人事業主</dd>
+            <dt>課題</dt><dd>定型オペレーション、データ入力、簡易カスタマーサポート、リサーチ業務が自動化対象になり得ます。</dd>
+            <dt>難易度</dt><dd>中（既存AI API/OSSの組み合わせで実装可）</dd>
+            <dt>最初の一手</dt><dd>既存顧客への個別提案、または該当業界コミュニティでの告知</dd>
+          </dl>
+          <a class="link" href="https://news.google.com/rss/articles/CBMilgJBVV95cUxNUGhYamJGUFM3OFdLdHdzWmhVbjRsNThOX21kajNJWnlPT3Zob3FjdERFT3hfRURpR3JFYzlsOGtLdU5kbnYtajVDR20tTTE0Mk5kc1pYeFNVVHlYSkVJdklPVWtlbFhtQmJ0QlJ1RFJfYU10cjB0WGwwaDJnZGFXWEV0bHJ0TDlZTU10NnJJZ0tIRHJOd013eE43eE5TQ09lYmNKalVfRXhyaDJZLUQzeHdvN0o5TzBCQXlOcHRycU5PNjBxU21KaFRocDN6a0V0OUxwZnI2MDRPT3dmb1pfQ1huSWRZckFBQ3FDa1F0UUVkRW13X3A1NEJELWloc2JHV3MzTTd4RXZXbHVaR3VHVmo0RWNWUQ?oc=5" target="_blank" rel="noopener">参照 →</a>
+        </div>
+        <div class="glow note">
+          <span class="tag">ビジネスチャンス</span>
+          <h4>Italian Cybersecurity Startup Exein Raises $270 Million, Reaches $1.7 … を参考にした小規模展開</h4>
+          <dl>
+            <dt>顧客</dt><dd>同様の課題を持つ中小企業・個人事業主</dd>
+            <dt>課題</dt><dd>特定業界の営業・カスタマーサクセス・オペレーション職に影響する可能性があります。</dd>
+            <dt>難易度</dt><dd>中（既存AI API/OSSの組み合わせで実装可）</dd>
+            <dt>最初の一手</dt><dd>既存顧客への個別提案、または該当業界コミュニティでの告知</dd>
+          </dl>
+          <a class="link" href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxQeVFfMy1fWnVReEx2WGdQUFpvTUlVaHJxR090cmNqMVZ0SEkyZ3E1dW00ZG5NeFlmem9kWjJBM2pvMVVBX21pbHdDdjRIbnpFU2ZHSm84X0xNYzNlYkNVZ3pHRkpJWjN6QVJFUXB5SUZUaVpidXhDUzJ3UWY3MFNJMFAtckotS3Z1QmFTazN5OTE5cUpuRUlReHJsSVdqTkR0UUZnLXhtTm1Eb2ZIYUxkQjg0TmJqUkNCeDNMNGV1UHNRVFFoLUJoUGVGb1ZPMEJybncxN25qYWdBWHduVS1KUF9wbWJnOWhLYXc?oc=5" target="_blank" rel="noopener">参照 →</a>
+        </div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="action">
+      <div class="icon">◎</div>
+      <div><strong>今日1つだけやるなら</strong><p>「Physical AI Takes the Wheel: How the World’s Robotaxi Leaders Are Building With NVIDIA Technologies」を30分以内で実際に触ってみる、または関連ドキュメントを読んで自分の業務に転用できないか1つだけメモする。</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="glow"><b>このページは毎朝7:00に自動更新されます。</b> ローカルの収集ツールがMarkdownレポートと同時にこのページを生成し、GitHub Pagesへ自動公開しています。iPhone/Macでは「ホーム画面に追加」でアプリとして使えます。</div>
+    <div>データソース: 公式RSS・GitHub Releases・arXiv・Hacker News・Google News（すべて無料・APIキー不要）。金額などの数値と重要な判断は、必ず一次情報リンクで裏取りしてください。</div>
+    <div class="num">生成: 2026-09-16 19:57 JST ｜ 情報源稼働 54/55</div>
+  </footer>
+</div>
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js').catch(function(){}); }
+</script>
+</body>
+</html>
