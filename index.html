@@ -130,23 +130,23 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
     <h1>AI情勢ブリーフィング</h1>
     <p class="sub">OpenAI・Google DeepMind・NVIDIA・Hugging Face・arXiv・GitHub Releases・Hacker News・Google Newsなど、無料の公開情報源62件を毎朝7:00に自動収集し、重複を除いてS〜Cの重要度で選別した日次ブリーフィングです。</p>
     <div class="metaline num">
-      <span><b>更新</b> 2026-10-31 01:46 JST</span>
+      <span><b>更新</b> 2026-10-31 07:25 JST</span>
       <span><b>対象</b> 直近24〜30時間の新着・更新</span>
       <span><b>次回</b> 明朝7:00 自動更新</span>
     </div>
   </header>
 
   <div class="kpis">
-    <div class="glow kpi"><div class="n num">279</div><div class="l">本日の候補記事（重複統合後）</div></div>
+    <div class="glow kpi"><div class="n num">381</div><div class="l">本日の候補記事（重複統合後）</div></div>
     <div class="glow kpi"><div class="n num" style="color:var(--tier-s)">2</div><div class="l">S級 — 前提が変わる規模</div></div>
-    <div class="glow kpi"><div class="n num" style="color:var(--tier-a)">14</div><div class="l">A級 — 今週中に押さえる（他 8件のS/A級候補は割愛）</div></div>
-    <div class="glow kpi"><div class="n num">36<small>/62</small></div><div class="l">情報源 稼働（直近実行）</div></div>
+    <div class="glow kpi"><div class="n num" style="color:var(--tier-a)">16</div><div class="l">A級 — 今週中に押さえる（他 10件のS/A級候補は割愛）</div></div>
+    <div class="glow kpi"><div class="n num">61<small>/62</small></div><div class="l">情報源 稼働（直近実行）</div></div>
   </div>
 
   <section>
     <h2>今日の結論</h2>
     <p class="note-sub">「何が起きたか」ではなく「AI業界がどちらへ進んだか」の要点</p>
-    <ul class="glow theses"><li>AI投資額が急増し、世界中でAI技術の発展が加速していることが示唆される。</li><li>GPT-6の開発が進み、AIの表現力と生成能力が飛躍的に向上している。</li><li>マルチアグリゲーションの技術が進化し、AIの性能とコストを大幅に改善している。</li><li>AIの開発に伴う新たな研究分野が生まれ、AIの可能性が広がっている。</li><li>AIの技術革新により、様々な分野での活用が期待される。</li></ul>
+    <ul class="glow theses"><li>AI投資額の急増が見られるようになり、世界全体で約2000億ドルの資金が投入されている。</li><li>GPT-6.1 Terraの発表により、AIのモデルの性能が大幅に向上し、開発コストを大幅に削減する可能性が高まっている。</li><li>長期的な記憶機能を備えたAIの開発が進み、開発者にとってより効率的なツールとしての価値が高まっている。</li><li>世界中でAI投資額が急増している中、日本ではAIの研究と開発が進んでおり、AIの技術の発展に期待が高まっている。</li></ul>
   </section>
 
   <section>
@@ -158,7 +158,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
           <span class="pill cat">harness</span>
         </div>
         <h3>Browser Use: 0.13.11</h3>
-        <p class="summary">このリリースでは、ブラウザ使用ツールセット「Browser Use」がClaudeに提供されます。このツールセットは、Anthropic SDKの最新版に含まれるanthropic.tools.browserを使用していますが、現在の公開版には含まれていません。ドキュメンテーションは、https://docs.browser-use.com/のページにあります。PyPIでは保護されたリリースプロセスを使用し、独自のレビュー承認が必要です。このリリースでは、publishワークフローのツールチェーンを@MagMuellerによって修正しました。ファイルシステムでは、write_file関数が小さなバイナリ画像（png/gi）を作成できるようになりました。</p>
+        <p class="summary">このリリースでは、ブラウザ使用ツールセット「Browser Use」がClaudeに対応しています。Anthropic SDKの更新が必要で、現在の公開版にはまだ含まれていません。ドキュメンテーションはhttps://docs.browser-use.com/を参照してください。PyPIでは保護されたリリースプロセスを使用し、独自のレビュー承認が必要です。ブラウザのファイルシステムでは、write_fileを使用して小さなバイナリ画像（png/gi）を作成できます。</p>
         <p class="why"><b>なぜ重要か</b> AI業界の前提を変えうる規模の変化であり、多くの関連サービス・業務プロセスに波及する可能性があります。</p>
         <p class="why"><b>新しくできること</b> できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
         <div class="meta num">GitHub Releases · Browser Use ｜ 2026-10-07</div>
@@ -173,12 +173,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
           <span class="pill cat">harness</span>
         </div>
         <h3>Browser Use: 0.13.10</h3>
-        <p class="summary">ブラウザのアップデート: 0.13.10
-- ランタイム、開発、ビルド依存関係をすべて明示的に宣言する。
-- MCP Python SDK 2.1.1 をアップデートし、pydantic-settings 2.15.0 を依存関係に追加する。
-- Pydantic 2.13.5 と Hatchling 1.32.0 を更新し、pypdf 6.16.2 をアップデートする。
-- MCP ソフトウェアツールの呼び出しを不明なものとしてエラーとして報告し、成功した結果として扱う。
-- 認証情報の検証に GitHub テストマスタ、モデルアダプター、MCP ストーリーミーティング、マルチプラットフォームのインストール、フォ</p>
+        <p class="summary">Browser Use 0.13.10のアップデートが完了しました。すべてのデプロイ、開発、ビルド依存関係を特定のランタイムに Harness 0.1.13にアップデートし、MCP Python SDK 2.1.1をアップグレードしました。また、Pydantic 2.15.0を明示的な依存関係に、Pydantic 2.13.5とHatchling 1.32.0をアップデートしました。pypdf 6.16.2をアップデートし、現在のpypdf Dependabotの警告を解決しました。未知のMCP工具の呼び出しは、アプリケーションエラーとして報告され、GitHubのテストマトリクス、モデルアダプター、MCP stdioの手接、マルチプラットフォームのインストール、集中した</p>
         <p class="why"><b>なぜ重要か</b> AI業界の前提を変えうる規模の変化であり、多くの関連サービス・業務プロセスに波及する可能性があります。</p>
         <p class="why"><b>新しくできること</b> できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
         <div class="meta num">GitHub Releases · Browser Use ｜ 2026-09-04</div>
@@ -195,6 +190,15 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
       <div class="a-row">
         <span class="pill tier-a">A</span>
         <div class="a-body">
+          <div class="a-title">Intel’s stock crashes, knocking $12B from government’s stake</div>
+          <div class="a-sum">Intel株が下落し、政府の投資額が120億ドル減少。PCの販売減少とAIの需要が原因。</div>
+          <div class="a-src num">企業導入 ｜ TechCrunch AI ｜ 2026-10-30</div>
+        </div>
+        <a class="link" href="https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/" target="_blank" rel="noopener">読む →</a>
+      </div>
+      <div class="a-row">
+        <span class="pill tier-a">A</span>
+        <div class="a-body">
           <div class="a-title">City digital health startups raise $1.9 billion in third quarter, report finds - Crain&#x27;s New York</div>
           <div class="a-sum">都市型のデジタルヘルス startupが第三四半期に1900億円を調達したと報告されています。</div>
           <div class="a-src num">ビジネス ｜ Google News (Crain&#x27;s New York) ｜ 2026-10-29</div>
@@ -205,7 +209,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
         <span class="pill tier-a">A</span>
         <div class="a-body">
           <div class="a-title">Canada, Nvidia Back Cohere in Round at Over $20 Billion Value - Bloomberg.com</div>
-          <div class="a-sum">カナダとNvidiaがCohereの資金輪回を支援し、約20兆円の価値を持つ資金を調達するRoundを計画していると、Bloomberg.comが報じている。</div>
+          <div class="a-sum">カナダとNVIDIAがCohereの資金輪回を支援し、約2兆円の市場価値を達成するというニュースです。</div>
           <div class="a-src num">モデル ｜ Google News (Bloomberg.com) ｜ 2026-10-29</div>
         </div>
         <a class="link" href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQVk0xNE9EYzVuMEQ0OUJvYXNDMTFEN2tfVkVYWV9xSXpQWnlQUkNVTTIyWG5XOThJMHY3WWs5RktqWXpVMjN1ZmtXcVFUeVJMYjJNaEhFTTg1b0RNblJUTHZ3LW1wZ0JmRUZEUURwTy0yaC1nXzlHM3ZKeWFIUVJBdUZ5VlU0RXZxcTNKdGZ0ZHVoVWFILTRRWmVyVlN3V2V1X1VONWdTNjFYYVcwYUlj?oc=5" target="_blank" rel="noopener">読む →</a>
@@ -223,7 +227,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
         <span class="pill tier-a">A</span>
         <div class="a-body">
           <div class="a-title">OpenAI unveils new AI model, GPT-6.1 Terra - TradingView</div>
-          <div class="a-sum">OpenAI発表: GPT-6.1 Terraが登場。</div>
+          <div class="a-sum">OpenAIが新AIモデルGPT-6.1を発表し、TradingViewで公開されている。</div>
           <div class="a-src num">モデル ｜ Google News (TradingView) ｜ 2026-10-26</div>
         </div>
         <a class="link" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOR2RNT2FSUDlWV1BONG50dV9pU2pxUHVrNnZmMzhCbmJCb1k0XzEtSm5UcWhHdzRqZHlKbThSUVhqNDRCUEJjTkZpOGtmX0tjSVJTcklqOGVLX0Z2NmowSzVITThJYWZvVFpoeFdyR1FoUWdTa1ctNE1CMks4alVmQkhZTzNWVXBtTE5PRGppYTRWMDgwbVk4T3YyWWRuSkJ5MHltenZoRQ?oc=5" target="_blank" rel="noopener">読む →</a>
@@ -231,26 +235,17 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
       <div class="a-row">
         <span class="pill tier-a">A</span>
         <div class="a-body">
-          <div class="a-title">Long-Term Agent Memory through Complementary Curation and Consolidation</div>
-          <div class="a-sum">この研究では、長期記憶を強化するためのハイブリッドメモリアーキテクチャを提案しました。これは、エピソードメモリと構造的な関係メモリと、記憶を保存するためのコンソールメカニズムを組み合わせています。この研究は、2つの BenchMark: LoCoMoとLongMemEval-Sで実証を行い、両メモリが互いに補完し、既存のメモリフレームワークを上回る90.2%の精度を達成しました。</div>
-          <div class="a-src num">研究 ｜ arXiv · cs.MA ｜ 2026-10-29</div>
+          <div class="a-title">Claude Code VS Code extension with backdoor released on Cursor marketplace</div>
+          <div class="a-sum">Claude CodeのコードとCode extensionのバグ版がCursorマーケットプレイスでリリースされました。</div>
+          <div class="a-src num">コーディング ｜ Hacker News ｜ 2026-10-30</div>
         </div>
-        <a class="link" href="https://arxiv.org/abs/2610.39790v1" target="_blank" rel="noopener">読む →</a>
-      </div>
-      <div class="a-row">
-        <span class="pill tier-a">A</span>
-        <div class="a-body">
-          <div class="a-title">Microsoft hits 10 quarters of record- breaking revenue in a row</div>
-          <div class="a-sum">Microsoft 3Q23で10カ月連続の記録的な収益を達成し、年間ベースでは19%の増加を記録した。</div>
-          <div class="a-src num">ビジネス ｜ TechCrunch AI ｜ 2026-10-28</div>
-        </div>
-        <a class="link" href="https://techcrunch.com/2026/10/28/microsoft-hits-10-quarters-of-record-breaking-revenue-in-a-row/" target="_blank" rel="noopener">読む →</a>
+        <a class="link" href="https://doublepulsar.com/anthropic-hacked-to-deliver-remote-access-trojan-to-claude-developer-laptops-worldwide-1148a92baae2" target="_blank" rel="noopener">読む →</a>
       </div></div>
   </section>
 
   <section>
     <h2>今週のカテゴリ動向 <span class="count">直近7日間・記事数</span></h2>
-    <div class="trend"><div class="glow"><div class="n num">687</div><div class="l">モデル</div></div><div class="glow"><div class="n num">220</div><div class="l">研究</div></div><div class="glow"><div class="n num">116</div><div class="l">エージェント</div></div><div class="glow"><div class="n num">77</div><div class="l">コーディング</div></div><div class="glow"><div class="n num">55</div><div class="l">ビジネス</div></div><div class="glow"><div class="n num">17</div><div class="l">OSS</div></div></div>
+    <div class="trend"><div class="glow"><div class="n num">750</div><div class="l">モデル</div></div><div class="glow"><div class="n num">220</div><div class="l">研究</div></div><div class="glow"><div class="n num">127</div><div class="l">エージェント</div></div><div class="glow"><div class="n num">83</div><div class="l">コーディング</div></div><div class="glow"><div class="n num">62</div><div class="l">ビジネス</div></div><div class="glow"><div class="n num">21</div><div class="l">OSS</div></div></div>
   </section>
 
   <section>
@@ -270,8 +265,26 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
           <p>できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
           <dl><dt>所要時間</dt><dd>目安15〜30分</dd><dt>試し方</dt><dd>公式サイト/リポジトリを開き、無料枠・OSS版があれば実際に動かす</dd></dl>
           <a class="link" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOR2RNT2FSUDlWV1BONG50dV9pU2pxUHVrNnZmMzhCbmJCb1k0XzEtSm5UcWhHdzRqZHlKbThSUVhqNDRCUEJjTkZpOGtmX0tjSVJTcklqOGVLX0Z2NmowSzVITThJYWZvVFpoeFdyR1FoUWdTa1ctNE1CMks4alVmQkhZTzNWVXBtTE5PRGppYTRWMDgwbVk4T3YyWWRuSkJ5MHltenZoRQ?oc=5" target="_blank" rel="noopener">一次情報を開く →</a>
+        </div>
+        <div class="glow note">
+          <span class="tag">試すべきAI</span>
+          <h4>Claude Code VS Code extension with backdoor released on Cursor marketplace</h4>
+          <p>仕様からコード生成・テスト・デバッグまでの一連の工程をAIだけで完結できる範囲が広がりました。</p>
+          <dl><dt>所要時間</dt><dd>目安15〜30分</dd><dt>試し方</dt><dd>公式サイト/リポジトリを開き、無料枠・OSS版があれば実際に動かす</dd></dl>
+          <a class="link" href="https://doublepulsar.com/anthropic-hacked-to-deliver-remote-access-trojan-to-claude-developer-laptops-worldwide-1148a92baae2" target="_blank" rel="noopener">一次情報を開く →</a>
         </div></div>
       <div class="col">
+        <div class="glow note">
+          <span class="tag">ビジネスチャンス</span>
+          <h4>Intel’s stock crashes, knocking $12B from government’s stake を参考にした小規模展開</h4>
+          <dl>
+            <dt>顧客</dt><dd>同様の課題を持つ中小企業・個人事業主</dd>
+            <dt>課題</dt><dd>バックオフィス・営業事務・カスタマーサポートなど定型業務の担当者に影響します。</dd>
+            <dt>難易度</dt><dd>中（既存AI API/OSSの組み合わせで実装可）</dd>
+            <dt>最初の一手</dt><dd>既存顧客への個別提案、または該当業界コミュニティでの告知</dd>
+          </dl>
+          <a class="link" href="https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/" target="_blank" rel="noopener">参照 →</a>
+        </div>
         <div class="glow note">
           <span class="tag">ビジネスチャンス</span>
           <h4>City digital health startups raise $1.9 billion in third quarter, repo… を参考にした小規模展開</h4>
@@ -293,17 +306,6 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
             <dt>最初の一手</dt><dd>既存顧客への個別提案、または該当業界コミュニティでの告知</dd>
           </dl>
           <a class="link" href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxOS0Q3OWMzVzRJRjJGejR2RGpkU3NUQVh0TDZjWVRlZ1NoQU9OUjBiRFBQNTctRUFCeDNJaGpwRlRZVHRXT1F6V2pTZjJpSGtvZE1idl9ia0ZzWlhFQTZ1Z1IxVlRlTVNDNTZ1cDRmUkRFaXBISWtkal8tWDlTa28zQ0VZQ2MzeTdta3Fv?oc=5" target="_blank" rel="noopener">参照 →</a>
-        </div>
-        <div class="glow note">
-          <span class="tag">ビジネスチャンス</span>
-          <h4>Microsoft hits 10 quarters of record- breaking revenue in a row を参考にした小規模展開</h4>
-          <dl>
-            <dt>顧客</dt><dd>同様の課題を持つ中小企業・個人事業主</dd>
-            <dt>課題</dt><dd>特定業界の営業・カスタマーサクセス・オペレーション職に影響する可能性があります。</dd>
-            <dt>難易度</dt><dd>中（既存AI API/OSSの組み合わせで実装可）</dd>
-            <dt>最初の一手</dt><dd>既存顧客への個別提案、または該当業界コミュニティでの告知</dd>
-          </dl>
-          <a class="link" href="https://techcrunch.com/2026/10/28/microsoft-hits-10-quarters-of-record-breaking-revenue-in-a-row/" target="_blank" rel="noopener">参照 →</a>
         </div></div>
     </div>
   </section>
@@ -318,7 +320,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
   <footer>
     <div class="glow"><b>このページは毎朝7:00に自動更新されます。</b> ローカルの収集ツールがMarkdownレポートと同時にこのページを生成し、GitHub Pagesへ自動公開しています。iPhone/Macでは「ホーム画面に追加」でアプリとして使えます。</div>
     <div>データソース: 公式RSS・GitHub Releases・arXiv・Hacker News・Google News（すべて無料・APIキー不要）。金額などの数値と重要な判断は、必ず一次情報リンクで裏取りしてください。</div>
-    <div class="num">生成: 2026-10-31 01:46 JST ｜ 情報源稼働 36/62</div>
+    <div class="num">生成: 2026-10-31 07:25 JST ｜ 情報源稼働 61/62</div>
   </footer>
 </div>
 <script>
