@@ -130,23 +130,23 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
     <h1>AI情勢ブリーフィング</h1>
     <p class="sub">OpenAI・Google DeepMind・NVIDIA・Hugging Face・arXiv・GitHub Releases・Hacker News・Google Newsなど、無料の公開情報源62件を毎朝7:00に自動収集し、重複を除いてS〜Cの重要度で選別した日次ブリーフィングです。</p>
     <div class="metaline num">
-      <span><b>更新</b> 2026-11-08 07:29 JST</span>
+      <span><b>更新</b> 2026-11-09 09:30 JST</span>
       <span><b>対象</b> 直近24〜30時間の新着・更新</span>
       <span><b>次回</b> 明朝7:00 自動更新</span>
     </div>
   </header>
 
   <div class="kpis">
-    <div class="glow kpi"><div class="n num">238</div><div class="l">本日の候補記事（重複統合後）</div></div>
+    <div class="glow kpi"><div class="n num">230</div><div class="l">本日の候補記事（重複統合後）</div></div>
     <div class="glow kpi"><div class="n num" style="color:var(--tier-s)">2</div><div class="l">S級 — 前提が変わる規模</div></div>
-    <div class="glow kpi"><div class="n num" style="color:var(--tier-a)">14</div><div class="l">A級 — 今週中に押さえる（他 8件のS/A級候補は割愛）</div></div>
+    <div class="glow kpi"><div class="n num" style="color:var(--tier-a)">13</div><div class="l">A級 — 今週中に押さえる（他 7件のS/A級候補は割愛）</div></div>
     <div class="glow kpi"><div class="n num">61<small>/62</small></div><div class="l">情報源 稼働（直近実行）</div></div>
   </div>
 
   <section>
     <h2>今日の結論</h2>
     <p class="note-sub">「何が起きたか」ではなく「AI業界がどちらへ進んだか」の要点</p>
-    <ul class="glow theses"><li>AI投資額が急増し、1 trillionドルを超えた。OpenAIが新たな1 trillionドルのvaluationを達成し、競合企業AnthropicのIPOも近づいている。</li><li>AIインパネー企業Falのvaluationが160億ドルに跳ね上がり、AI開発の需要が高まっていることを示す。</li><li>サイバーセキュリティ分野のAI開発が急速に進展し、新たな技術やサービスが市場に投入されている。</li><li>バイナリーを使用するブラウザの使用率が低下し、新しいバージョンのブラウザが導入されている。</li><li>ソフトウェア開発のためのAIプラットフォームの使用が増加し、新たなバージョンがリリースされている。</li></ul>
+    <ul class="glow theses"><li>OpenAIのvaluationが1.25 trillionに上昇し、$11 billionを調達した。</li><li>AIのインパネインテリジェンス（AI2）が$100Bのバイオテック Ventureを破壊した。</li><li>TencentのHy4は強力な frontier LLMを導入し、視覚理解とコンピュータ使用が可能となった。</li><li>AIのインパネインテリジェンス（AI2）が金融研究の基準を上回った。</li><li>OpenAIのbrowser toolsが最新のバージョンを導入し、ユーザー体験が向上した。</li></ul>
   </section>
 
   <section>
@@ -158,7 +158,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
           <span class="pill cat">harness</span>
         </div>
         <h3>Browser Use: 0.13.11</h3>
-        <p class="summary">このリリースでは、ブラウザ使用ツールセットがClaudeに追加されました。このツールセットは、Anthropic SDKの最新版に含まれるanthropic.tools.browserを使用しています。また、PyPIの公開は保護されたリリースワークフローを通じて行われ、独自のレビュー承認が必要です。ブラウザのファイルシステムでは、write_file関数が小さなバイナリ画像（PNG/GIF）を作成できるようになりました。</p>
+        <p class="summary">このリリースでは、ブラウザ使用ツールセット「Browser Use」がClaudeに追加されました。このツールセットは、Anthropic SDKの最新版に含まれていないため、現在の公開版には含まれていません。ブラウザの使用をカスタマイズするためのドキュメンテーションは、https://docs.browser-use.com/にあります。また、パブリックリリースプロセスを通じて公開され、独自のレビューを必要とします。このリリースでは、publishワークフローツールチェーンのピアノをマグミューラーによって修正し、filesystem: write_fileが小さなバイナリ画像（png/gi）を作成する機能が追加されました。</p>
         <p class="why"><b>なぜ重要か</b> AI業界の前提を変えうる規模の変化であり、多くの関連サービス・業務プロセスに波及する可能性があります。</p>
         <p class="why"><b>新しくできること</b> できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
         <div class="meta num">GitHub Releases · Browser Use ｜ 2026-10-07</div>
@@ -173,16 +173,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
           <span class="pill cat">harness</span>
         </div>
         <h3>Browser Use: 0.13.10</h3>
-        <p class="summary">ブラウザのアップデート: 0.13.10
-
-アップデート内容：
-- ランタイム、開発、ビルド依存関係をすべて特定のピアノに設定
-- MCP Python SDK 2.1.1 のアップデート
-- Pydantic 2.15.0 の追加
-- Pydantic 2.13.5 と Hatchling 1.32.0 のピアノ設定
-- pypdf 6.16.2 のアップデート（Dependabot の 3 つのアドバイスを解決）
-- MCP ターミナルコマンドの不明な呼び出しをアプリケーションエラーとして報告
-- バリデーション：GitHub テストマトリックス、モデルアダプター、MCP ストーリーチャイム、マルチプラットフォームのインスト</p>
+        <p class="summary">Browser Use 0.13.10のアップデートが完了しました。すべてのデプロイ、開発、ビルド依存関係を特定のランタイムに Harness 0.1.13に Harness SDK 2.1.1に移行しました。Pydantic 2.15.0を明示的に依存関係に Hatchling 1.32.0をピアノピアノ 2.13.5をアップグレードしました。pypdf 6.16.2をアップデートし、現在の pypdf Dependabot の警告を解決しました。未知の MCP ターミナルの呼び出しは、アプリケーションエラーとして報告され、GitHub テストマスタ、モデルアダプター、MCP ストーリーライン、マルチプラットフォームのインストール、集中した PDF テ</p>
         <p class="why"><b>なぜ重要か</b> AI業界の前提を変えうる規模の変化であり、多くの関連サービス・業務プロセスに波及する可能性があります。</p>
         <p class="why"><b>新しくできること</b> できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
         <div class="meta num">GitHub Releases · Browser Use ｜ 2026-09-04</div>
@@ -199,35 +190,35 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
       <div class="a-row">
         <span class="pill tier-a">A</span>
         <div class="a-body">
-          <div class="a-title">Thinking Machines Lab is closing in on a new $5 billion funding round at a $40 billion valuation - Business Insider</div>
-          <div class="a-sum">Thinking Machines Labが40兆ドルのvaluationで5兆ドルの新投資ラウンドを計画している。</div>
-          <div class="a-src num">ビジネス ｜ Google News (Business Insider) ｜ 2026-11-06</div>
+          <div class="a-title">Traversal raises $120 million at $1 billion valuation - The American Bazaar</div>
+          <div class="a-sum">Traversalは120億ドルの資金調達を行い、1兆ドルのvaluationを達成しました。</div>
+          <div class="a-src num">ビジネス ｜ Google News (The American Bazaar) ｜ 2026-11-08</div>
         </div>
-        <a class="link" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ3RIWjQyVzNMbGh6TXRFLWFJNVJWNjhuaVMySWZYendJb3BsbURidWIwbm9vMkNvZEhSQ2xDQ1d6V0ZnOU1VYWYwc2dNNTA2UDBfanJFTnNfLWVVcldHX21jWklUQi1uN2RkTU0wM3hYTksxZldMd01lRXJpTGZNT0hWbEpZeTVmTnFBQ1QwRml0MVBkc1VF?oc=5" target="_blank" rel="noopener">読む →</a>
+        <a class="link" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOXzRUQUlQREsxdTNUV3BTcHAwcDJDUnBtVGFmbzROM1hiaHBjdkJYcG1VVHhtUURVZTRxYTh6QzlrQmYweFE5dEVySEZrd0N5RS1iQ255bWhYbndyQjJENTJaOHNsaFhOUVg0S0ZxeDViRW1UVWZBRGZKbzVqc2M2LWlkR2JPOE1BcmVKZTFIR2lBTTVrZFB1b0lBNTJ1QWkyOWFiNzBhSEx3QQ?oc=5" target="_blank" rel="noopener">読む →</a>
       </div>
       <div class="a-row">
         <span class="pill tier-a">A</span>
         <div class="a-body">
-          <div class="a-title">Fal raises at $16B valuation, Crowdstrike strikes for two deals - Axios</div>
-          <div class="a-sum">Falが16兆ドルのvaluationで資金調達を行い、Crowdstrikeは2つの取引で資金調達を行いました。</div>
-          <div class="a-src num">ビジネス ｜ Google News (Axios) ｜ 2026-11-07</div>
+          <div class="a-title">6th-grade Peano arithmetic broke OpenAI&#x27;s $100B Yang-Mills mass gap proof</div>
+          <div class="a-sum">OpenAIの$100BのYang-Mills mass gap証明が6歳のペアノ算術で破綻した。</div>
+          <div class="a-src num">モデル ｜ Hacker News ｜ 2026-11-08</div>
         </div>
-        <a class="link" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPdmYxMnZZelJ5MklNV296TnFHRERkY1hhTHRieEJubFBpVmdHMmNCOUo0TXN1M2IwbGd0RFl3TFpVeEZoaDJsNjVPdDhlcktLaWxEYzZvTGxSQjU5SEp4YU8yQUd6bnhFTUNwUEVDNi0zQnluc2hId3lXYU80ZVVVcV9peVdJQ3Rxdkh5YTg0VGU5bC1CWjk0?oc=5" target="_blank" rel="noopener">読む →</a>
+        <a class="link" href="https://github.com/Dr-Logvinovich/round-square/blob/main/README.md" target="_blank" rel="noopener">読む →</a>
       </div>
       <div class="a-row">
         <span class="pill tier-a">A</span>
         <div class="a-body">
-          <div class="a-title">The Hardest Easy Problem in AI: The State of Computer Use Agents | by Adnan Masood, PhD. - Medium</div>
-          <div class="a-sum">AIの難易問題: コンピュータ使用アシスタントの状況 | アダヌン・マスード, ディスコート・ド・スカイ - メディアズ</div>
-          <div class="a-src num">エージェント ｜ Google News (Medium) ｜ 2026-07-06</div>
+          <div class="a-title">A 3-Line Torus Geometry Proof Wrecked OpenAI&#x27;s $100B Biotech Venture</div>
+          <div class="a-sum">OpenAIの大規模バイオテクノロジー Ventureが3線円柱の幾何学的証明で破綻した。</div>
+          <div class="a-src num">モデル ｜ Hacker News ｜ 2026-11-08</div>
         </div>
-        <a class="link" href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPTmEzZkVpZ0lBSWRERzJkaHoyemo1R3BPWEpsejVaNzByQkpzSHdLc0doMm1ORkdabUFjeUE1YU5YMDdyUTZpQXNneG93UU5HTkhmWXkzMjVqSXlYVTMxbEJTVzhUR2p6QncxNFpycHFSY05CZ1FObkw5VzAxYkh4UjJWM09wXzRqVFpRc2MzWWNwVGdYY256SEpvSzRFc2tNX2JrVzh2cVU0WHhn?oc=5" target="_blank" rel="noopener">読む →</a>
+        <a class="link" href="https://github.com/Dr-Logvinovich/codon-torus-syntax/blob/main/README.md" target="_blank" rel="noopener">読む →</a>
       </div>
       <div class="a-row">
         <span class="pill tier-a">A</span>
         <div class="a-body">
           <div class="a-title">OpenAI Secures $11B at $1.25T Valuation</div>
-          <div class="a-sum">OpenAIは110億ドルの資金調達を成功させ、現在の市場価値は12500億ドルに達しています。</div>
+          <div class="a-sum">OpenAIは110億ドルの資金調達を達成し、現在の市場価値1兆2500億ドルに達している。</div>
           <div class="a-src num">ビジネス ｜ Hacker News ｜ 2026-11-06</div>
         </div>
         <a class="link" href="https://epyhia.com/openai-secures-11-billion-at-1-25-trillion-valuation-well-short-of" target="_blank" rel="noopener">読む →</a>
@@ -235,26 +226,26 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
       <div class="a-row">
         <span class="pill tier-a">A</span>
         <div class="a-body">
-          <div class="a-title">OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO</div>
-          <div class="a-sum">OpenAIのvaluationは1.25 trillion円に上昇し、新たな資金調達で11億ドルを調達しました。これは世界で最も価値のある企業の一つとなり、3月に852兆円のvaluationで122億ドルを調達した後です。同社はIPOの接近に近づいており、競合企業AnthropicもIPOの接近に近づいています。</div>
-          <div class="a-src num">ビジネス ｜ The Verge AI ｜ 2026-11-06</div>
+          <div class="a-title">OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation</div>
+          <div class="a-sum">OpenAIは11兆ドルのvaluationで1兆ドルの資金調達を行ったと報じられています。</div>
+          <div class="a-src num">ビジネス ｜ TechCrunch AI ｜ 2026-11-06</div>
         </div>
-        <a class="link" href="https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation" target="_blank" rel="noopener">読む →</a>
+        <a class="link" href="https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/" target="_blank" rel="noopener">読む →</a>
       </div>
       <div class="a-row">
         <span class="pill tier-a">A</span>
         <div class="a-body">
-          <div class="a-title">OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation</div>
-          <div class="a-sum">OpenAIは11兆ドルのvaluationで11兆ドルの資金を調達したと報じられています。</div>
-          <div class="a-src num">ビジネス ｜ TechCrunch AI ｜ 2026-11-06</div>
+          <div class="a-title">Tencent releases Hy4, powerful frontier LLM introducing visual understanding and computer use - SiliconANGLE</div>
+          <div class="a-sum">騰訊リリースハイブリッド4（Hy4），強力な frontier AI モデルで視覚理解とコンピュータ使用を導入 SiliconANGLE</div>
+          <div class="a-src num">エージェント ｜ Google News (SiliconANGLE) ｜ 2026-11-04</div>
         </div>
-        <a class="link" href="https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/" target="_blank" rel="noopener">読む →</a>
+        <a class="link" href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxNY3Nxbndub1pERHliZ2JQbGR4WkxTTnlYMG5LWU9TZzVpaGxzRl9nSHlWSm1vYUJ4U1dmRzBybDFuTVB5QUtWVS1kSlo1eF9vN2NCZzBaZEJBQjJHTWdjVFNKcWJXaTJUQWlHZUJ2Z0xFWndEOTZsTlczTXdJR2EzMHBha09JVVNiZTFyY0gyMjAwdW9zd214WnprTExrTTJ2cmdOUko3OG10WUdDQTVMT3pGQzgxSDNSN1A1RThKVmdYMWk3OVMybA?oc=5" target="_blank" rel="noopener">読む →</a>
       </div></div>
   </section>
 
   <section>
     <h2>今週のカテゴリ動向 <span class="count">直近7日間・記事数</span></h2>
-    <div class="trend"><div class="glow"><div class="n num">666</div><div class="l">モデル</div></div><div class="glow"><div class="n num">218</div><div class="l">研究</div></div><div class="glow"><div class="n num">114</div><div class="l">エージェント</div></div><div class="glow"><div class="n num">81</div><div class="l">コーディング</div></div><div class="glow"><div class="n num">61</div><div class="l">ビジネス</div></div><div class="glow"><div class="n num">11</div><div class="l">企業導入</div></div></div>
+    <div class="trend"><div class="glow"><div class="n num">663</div><div class="l">モデル</div></div><div class="glow"><div class="n num">218</div><div class="l">研究</div></div><div class="glow"><div class="n num">117</div><div class="l">エージェント</div></div><div class="glow"><div class="n num">80</div><div class="l">コーディング</div></div><div class="glow"><div class="n num">65</div><div class="l">ビジネス</div></div><div class="glow"><div class="n num">10</div><div class="l">OSS</div></div></div>
   </section>
 
   <section>
@@ -263,44 +254,58 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
       <div class="col">
         <div class="glow note">
           <span class="tag">試すべきAI</span>
-          <h4>The Hardest Easy Problem in AI: The State of Computer Use Agents | by Adnan Masood, PhD. - Medium</h4>
+          <h4>6th-grade Peano arithmetic broke OpenAI&#x27;s $100B Yang-Mills mass gap proof</h4>
+          <p>できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
+          <dl><dt>所要時間</dt><dd>目安15〜30分</dd><dt>試し方</dt><dd>公式サイト/リポジトリを開き、無料枠・OSS版があれば実際に動かす</dd></dl>
+          <a class="link" href="https://github.com/Dr-Logvinovich/round-square/blob/main/README.md" target="_blank" rel="noopener">一次情報を開く →</a>
+        </div>
+        <div class="glow note">
+          <span class="tag">試すべきAI</span>
+          <h4>A 3-Line Torus Geometry Proof Wrecked OpenAI&#x27;s $100B Biotech Venture</h4>
+          <p>できることの範囲が広がりましたが、詳細は元記事を確認してください。</p>
+          <dl><dt>所要時間</dt><dd>目安15〜30分</dd><dt>試し方</dt><dd>公式サイト/リポジトリを開き、無料枠・OSS版があれば実際に動かす</dd></dl>
+          <a class="link" href="https://github.com/Dr-Logvinovich/codon-torus-syntax/blob/main/README.md" target="_blank" rel="noopener">一次情報を開く →</a>
+        </div>
+        <div class="glow note">
+          <span class="tag">試すべきAI</span>
+          <h4>Tencent releases Hy4, powerful frontier LLM introducing visual understanding and computer use - SiliconANGLE</h4>
           <p>人間の監督を減らしたまま、複数ステップのタスクを自律的に完了できる範囲が広がりました。</p>
           <dl><dt>所要時間</dt><dd>目安15〜30分</dd><dt>試し方</dt><dd>公式サイト/リポジトリを開き、無料枠・OSS版があれば実際に動かす</dd></dl>
-          <a class="link" href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPTmEzZkVpZ0lBSWRERzJkaHoyemo1R3BPWEpsejVaNzByQkpzSHdLc0doMm1ORkdabUFjeUE1YU5YMDdyUTZpQXNneG93UU5HTkhmWXkzMjVqSXlYVTMxbEJTVzhUR2p6QncxNFpycHFSY05CZ1FObkw5VzAxYkh4UjJWM09wXzRqVFpRc2MzWWNwVGdYY256SEpvSzRFc2tNX2JrVzh2cVU0WHhn?oc=5" target="_blank" rel="noopener">一次情報を開く →</a>
+          <a class="link" href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxNY3Nxbndub1pERHliZ2JQbGR4WkxTTnlYMG5LWU9TZzVpaGxzRl9nSHlWSm1vYUJ4U1dmRzBybDFuTVB5QUtWVS1kSlo1eF9vN2NCZzBaZEJBQjJHTWdjVFNKcWJXaTJUQWlHZUJ2Z0xFWndEOTZsTlczTXdJR2EzMHBha09JVVNiZTFyY0gyMjAwdW9zd214WnprTExrTTJ2cmdOUko3OG10WUdDQTVMT3pGQzgxSDNSN1A1RThKVmdYMWk3OVMybA?oc=5" target="_blank" rel="noopener">一次情報を開く →</a>
         </div></div>
       <div class="col">
         <div class="glow note">
           <span class="tag">ビジネスチャンス</span>
-          <h4>Thinking Machines Lab is closing in on a new $5 billion funding round … を参考にした小規模展開</h4>
+          <h4>Traversal raises $120 million at $1 billion valuation - The American B… を参考にした小規模展開</h4>
           <dl>
             <dt>顧客</dt><dd>同様の課題を持つ中小企業・個人事業主</dd>
             <dt>課題</dt><dd>特定業界の営業・カスタマーサクセス・オペレーション職に影響する可能性があります。</dd>
             <dt>難易度</dt><dd>中（既存AI API/OSSの組み合わせで実装可）</dd>
             <dt>最初の一手</dt><dd>既存顧客への個別提案、または該当業界コミュニティでの告知</dd>
           </dl>
-          <a class="link" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ3RIWjQyVzNMbGh6TXRFLWFJNVJWNjhuaVMySWZYendJb3BsbURidWIwbm9vMkNvZEhSQ2xDQ1d6V0ZnOU1VYWYwc2dNNTA2UDBfanJFTnNfLWVVcldHX21jWklUQi1uN2RkTU0wM3hYTksxZldMd01lRXJpTGZNT0hWbEpZeTVmTnFBQ1QwRml0MVBkc1VF?oc=5" target="_blank" rel="noopener">参照 →</a>
+          <a class="link" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOXzRUQUlQREsxdTNUV3BTcHAwcDJDUnBtVGFmbzROM1hiaHBjdkJYcG1VVHhtUURVZTRxYTh6QzlrQmYweFE5dEVySEZrd0N5RS1iQ255bWhYbndyQjJENTJaOHNsaFhOUVg0S0ZxeDViRW1UVWZBRGZKbzVqc2M2LWlkR2JPOE1BcmVKZTFIR2lBTTVrZFB1b0lBNTJ1QWkyOWFiNzBhSEx3QQ?oc=5" target="_blank" rel="noopener">参照 →</a>
         </div>
         <div class="glow note">
           <span class="tag">ビジネスチャンス</span>
-          <h4>Fal raises at $16B valuation, Crowdstrike strikes for two deals - Axio… を参考にした小規模展開</h4>
+          <h4>OpenAI Secures $11B at $1.25T Valuation を参考にした小規模展開</h4>
           <dl>
             <dt>顧客</dt><dd>同様の課題を持つ中小企業・個人事業主</dd>
             <dt>課題</dt><dd>特定業界の営業・カスタマーサクセス・オペレーション職に影響する可能性があります。</dd>
             <dt>難易度</dt><dd>中（既存AI API/OSSの組み合わせで実装可）</dd>
             <dt>最初の一手</dt><dd>既存顧客への個別提案、または該当業界コミュニティでの告知</dd>
           </dl>
-          <a class="link" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPdmYxMnZZelJ5MklNV296TnFHRERkY1hhTHRieEJubFBpVmdHMmNCOUo0TXN1M2IwbGd0RFl3TFpVeEZoaDJsNjVPdDhlcktLaWxEYzZvTGxSQjU5SEp4YU8yQUd6bnhFTUNwUEVDNi0zQnluc2hId3lXYU80ZVVVcV9peVdJQ3Rxdkh5YTg0VGU5bC1CWjk0?oc=5" target="_blank" rel="noopener">参照 →</a>
+          <a class="link" href="https://epyhia.com/openai-secures-11-billion-at-1-25-trillion-valuation-well-short-of" target="_blank" rel="noopener">参照 →</a>
         </div>
         <div class="glow note">
           <span class="tag">ビジネスチャンス</span>
-          <h4>The Hardest Easy Problem in AI: The State of Computer Use Agents | by … を参考にした小規模展開</h4>
+          <h4>OpenAI reportedly raises an additional $11 billion at a $1.25 trillion… を参考にした小規模展開</h4>
           <dl>
             <dt>顧客</dt><dd>同様の課題を持つ中小企業・個人事業主</dd>
-            <dt>課題</dt><dd>定型オペレーション、データ入力、簡易カスタマーサポート、リサーチ業務が自動化対象になり得ます。</dd>
+            <dt>課題</dt><dd>特定業界の営業・カスタマーサクセス・オペレーション職に影響する可能性があります。</dd>
             <dt>難易度</dt><dd>中（既存AI API/OSSの組み合わせで実装可）</dd>
             <dt>最初の一手</dt><dd>既存顧客への個別提案、または該当業界コミュニティでの告知</dd>
           </dl>
-          <a class="link" href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPTmEzZkVpZ0lBSWRERzJkaHoyemo1R3BPWEpsejVaNzByQkpzSHdLc0doMm1ORkdabUFjeUE1YU5YMDdyUTZpQXNneG93UU5HTkhmWXkzMjVqSXlYVTMxbEJTVzhUR2p6QncxNFpycHFSY05CZ1FObkw5VzAxYkh4UjJWM09wXzRqVFpRc2MzWWNwVGdYY256SEpvSzRFc2tNX2JrVzh2cVU0WHhn?oc=5" target="_blank" rel="noopener">参照 →</a>
+          <a class="link" href="https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/" target="_blank" rel="noopener">参照 →</a>
         </div></div>
     </div>
   </section>
@@ -315,7 +320,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
   <footer>
     <div class="glow"><b>このページは毎朝7:00に自動更新されます。</b> ローカルの収集ツールがMarkdownレポートと同時にこのページを生成し、GitHub Pagesへ自動公開しています。iPhone/Macでは「ホーム画面に追加」でアプリとして使えます。</div>
     <div>データソース: 公式RSS・GitHub Releases・arXiv・Hacker News・Google News（すべて無料・APIキー不要）。金額などの数値と重要な判断は、必ず一次情報リンクで裏取りしてください。</div>
-    <div class="num">生成: 2026-11-08 07:29 JST ｜ 情報源稼働 61/62</div>
+    <div class="num">生成: 2026-11-09 09:30 JST ｜ 情報源稼働 61/62</div>
   </footer>
 </div>
 <script>
